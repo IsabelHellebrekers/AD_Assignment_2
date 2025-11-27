@@ -1,0 +1,92 @@
+# =========================
+# Java / VSCode .gitignore
+# =========================
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# -------------------------
+# VSCode
+# -------------------------
+
+# VSCode settings
+.vscode/
+
+# VSCode extensions cache
+.vscode-test/
+
+# VSCode project settings
+.classpath
+.project
+.settings/
+
+# -------------------------
+# Build folders
+# -------------------------
+
+bin/
+out/
+build/
+target/
+
+# Gradle (je gebruikt het waarschijnlijk niet)
+.gradle/
+build/
+
+# Maven (als je ooit maven gebruikt)
+.mvn/
+target/
+
+# -------------------------
+# OS-specific
+# -------------------------
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Linux
+*.swp
+*.swo
+
+# -------------------------
+# Java tools
+# -------------------------
+
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# Eclipse
+.metadata/
+*.classpath
+*.project
