@@ -12,6 +12,12 @@ public class Main {
             System.out.println("Totale cost : " + sol.getTotalDistance(inst));
             System.out.println("Feasible    : " + sol.isFeasible(inst));
 
+            VND vnd = new VND();
+            vnd.solve(sol, inst);
+
+            System.out.println("Total cost with VND: " + sol.getTotalDistance(inst));
+            System.out.println("FSB: " + sol.isFeasible(inst));
+
             int rId = 1;
             for (Route r : sol.getRoutes()) {
                 System.out.print("Route " + rId++ + ": 1 ");

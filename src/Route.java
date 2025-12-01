@@ -13,6 +13,14 @@ public class Route {
     public Route() {
     }
 
+    public Route(List<Integer> customers, CVRPInstance instance) {
+        this.customers.addAll(customers);
+        this.demand = 0;
+        for (int c : customers) {
+            this.demand += instance.getDemand(c);
+        }
+    }
+
     /**
      * Adds a customer to the end of the route and updates the demand.
      * @param customer customer to add
