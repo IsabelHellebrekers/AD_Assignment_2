@@ -5,7 +5,7 @@ import java.util.*;
 public class GRASP {
     private final double alpha;
     private final VND vnd;
-    private final Random rng = new Random();
+    private final Random rng = new Random(42);
 
     public GRASP(double alpha) {
         this.alpha = alpha;
