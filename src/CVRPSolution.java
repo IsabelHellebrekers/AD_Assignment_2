@@ -8,6 +8,12 @@ import java.util.List;
 public class CVRPSolution {
     private final List<Route> routes = new ArrayList<>();
 
+    public CVRPSolution() {
+    }
+    
+    public CVRPSolution(List<Route> routes) {
+        this.routes.addAll(routes);
+    }
     /**
      * Adds a route to the solution
      * @param route the route to add

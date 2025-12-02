@@ -1,34 +1,25 @@
 package src;
 
 public class Main {
-    public static void main(String[] args) {
-        try {
-            CVRPInstance inst = InstanceReader.read("instances/instance5.txt");
+    public static void main(String[] args) throws Exception{
+        // CVRPInstance inst = InstanceReader.read("instances/instance5.txt");
+        
+        double alpha = 0.3;
+        long timeLimitMillis = 10 * 60 * 1000L;
 
-            SavingsHeuristic sh = new SavingsHeuristic();
-            CVRPSolution sol = sh.construct(inst);
+        GRASP grasp = new GRASP(alpha);
+        // CVRPSolution best = grasp.solve(inst, timeLimitMillis);
 
-            System.out.println("Aantal routes: " + sol.getNumberOfRoutes());
-            System.out.println("Totale cost : " + sol.getTotalDistance(inst));
-            System.out.println("Feasible    : " + sol.isFeasible(inst));
+        // System.out.println("Best objective: "+ best.getTotalDistance(inst));
 
-            VND vnd = new VND();
-            vnd.solve(sol, inst);
+        for (int i = 1; i <= 1; i++) {
+            CVRPInstance inst = InstanceReader.read("instances/instance" + i + ".txt");
+            CVRPSolution best = grasp.solve(inst, timeLimitMillis);
 
-            System.out.println("Total cost with VND: " + sol.getTotalDistance(inst));
-            System.out.println("FSB: " + sol.isFeasible(inst));
+            String out = "solution_" + i + ".txt";
+            SolutionWriter.writeSolution(out, best);
 
-            int rId = 1;
-            for (Route r : sol.getRoutes()) {
-                System.out.print("Route " + rId++ + ": 1 ");
-                for (int c : r.getCustomers()) {
-                    System.out.print("-> " + c + " ");
-                }
-                System.out.println("-> 1");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Generated " + out);
         }
     }
 }
