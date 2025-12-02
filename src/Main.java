@@ -10,7 +10,7 @@ public class Main {
         long timeLimitMillis = 10 * 60 * 1000L;
         GRASP grasp = new GRASP(alpha);
 
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 1; i++) {
             CVRPInstance inst = InstanceReader.read("instances/instance" + i + ".txt");
 
             CVRPSolution greedySol = new SavingsHeuristic().construct(inst);

@@ -14,6 +14,7 @@ public class CVRPSolution {
     public CVRPSolution(List<Route> routes) {
         this.routes.addAll(routes);
     }
+    
     /**
      * Adds a route to the solution
      * @param route the route to add

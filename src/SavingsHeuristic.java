@@ -1,7 +1,13 @@
 package src;
 import java.util.*;
 
+/**
+ * Greedy Savings Heuristic for constructing an initial CVRP solution.
+ */
 public class SavingsHeuristic {
+    /**
+     * Helper class for savings between two customers.
+     */
     private static class Saving {
         int i;
         int j;
@@ -14,6 +20,11 @@ public class SavingsHeuristic {
         }
     }
 
+    /**
+     * Constructs a CVRPSolution using the Savings Heuristic
+     * @param instance CVRP instance
+     * @return Constructed CVRPSolution
+     */
     public CVRPSolution construct(CVRPInstance instance) {
         int n = instance.getNodes();
         int capacity = instance.getCapacity();

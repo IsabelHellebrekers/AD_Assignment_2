@@ -5,6 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Utility class to write a CVRP solution to a txt file.
+ */
 public class SolutionWriter {
 
     public static void writeSolution(String filename, CVRPSolution sol) throws IOException {
